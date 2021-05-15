@@ -1,0 +1,48 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}
+    Auctions | Create New Listing
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <div class="col-12 col-md-10">
+                            <input type="file" class="form-control" id="picture" name="picture" accept="image/jpeg, image/jpg, image/png">
+                        </div>
+                    </div>
+                    <div class="form-group row input-group">
+                        <div class="col-2 input-group-prepend">
+                            <span class="form-control input-group-text" id="picture">Upload</span>
+                        </div>
+                        <div class="custom-file col-12 col-md-9">
+                            <input type="file" class="form-control custom-file-input" id="picture" name="picture" accept="image/jpeg, image/jpg, image/png">
+                            <label class="custom-file-label" for="picture">Choose Image</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="listtitle" name="listtitle" placeholder="Listing title...">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <label for="price" class="col-2 col-form-label"> INR </label>
+                            <input type="number" class="form-control col-10" id="price" name="price" placeholder="Starting price">
+                        </div>
+                    </div>
+                    <input type="file" accept="image/jpg, image/png">
+                    <input type="text" name="listtitle" placeholder="Listing Title">
+                    <input type="number" name="price" placeholder="Starting Price" min="0">
+                    <select name="category"></select>
+                    <textarea name="description" placeholder="Description about the listing goes here..." rows="6"></textarea>
+                    <input type="submit" name="submit" value="Post Listing">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
